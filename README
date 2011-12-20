@@ -1,3 +1,9 @@
 warrantystatus
 
-This is the warrantystatus module.
+The warrantystatus module will use the warranty-check gem in conjunction with
+the serialnumber of the system to automatically figure out the warranty information provided
+by the manufacter's website.
+
+
+
+
