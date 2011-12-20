@@ -1,4 +1,8 @@
+# warranty-check is a gem that must be installed from 
+# http://github.com/logicminds/warranty-check
 require 'warranty-check'
+
+
 
 module Puppet::Parser::Functions
 	newfunction(:warrantystatus, :type => :rvalue) do  | args |
