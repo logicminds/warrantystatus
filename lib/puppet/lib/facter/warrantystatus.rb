@@ -2,14 +2,18 @@
 if  FileTest.exists?("/etc/warrantystatusfile.txt")
 Facter.add("warrantystatus") do
         setcode do
-		# code to parse file 
+                thefact = ''
+                # code to parse file
                 file = File.open("/etc/warrantystatusfile.txt", "r")
-		file.each { |line
-			 matchobj = line.match(/^status/i)
-			 next if not matchobj
+                file.each { |line
+                         matchobj = line.match(/^status/i)
+                         next if not matchobj
                          # get the status
-			 matchobj[1].split('=')[1]
-		}
-                
+                         thefact = matchobj[1].split('=')[1]
+                         break
+                }
+                file.close
+                return thefact
+
         end
 end
