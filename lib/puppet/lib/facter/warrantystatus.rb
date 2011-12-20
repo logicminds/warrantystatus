@@ -9,7 +9,7 @@ Facter.add("warrantystatus") do
                          matchobj = line.match(/^status/i)
                          next if not matchobj
                          # get the status
-                         thefact = matchobj[1].split('=')[1]
+                         thefact = matchobj[1].split('=')[1].chomp
                          break
                 }
                 file.close
